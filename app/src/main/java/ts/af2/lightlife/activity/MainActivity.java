@@ -156,7 +156,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void onClick(View v) {
         setTransparency();
         tvDiscoveryNormal.getBackground().setAlpha(255);
-        switch (v.getId()){
+        switch (v.getId()){ 
             case R.id.ll_message:
                 viewPager.setCurrentItem(0, false);
                 tvMessagePress.getBackground().setAlpha(255);
