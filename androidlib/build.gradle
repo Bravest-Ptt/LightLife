@@ -1,21 +1,19 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
+
     defaultConfig {
-        applicationId "ts.af2.lightlife"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode Integer.valueOf("17051901")
-        versionName "v17.0519.01"
+        versionCode 1
+        versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
-    sourceSets {
-        main {
-            jni.srcDirs = []
-        }
-    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -29,7 +27,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile project(':androidlib')
-    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.alibaba:fastjson:1.1.57.android'
+    compile 'com.squareup.okhttp3:okhttp:3.7.0'
     testCompile 'junit:junit:4.12'
 }

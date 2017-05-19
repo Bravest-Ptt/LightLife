@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<url>
+    <!--注册用户-->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="register"
+        NetType="post"
+        Url="https://api.bmob.cn/1/users" />
+
+    <!--获取当前用户信息-->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="getUserInfo"
+        NetType="get"
+        Url="https://api.bmob.cn/1/users" />
+
+    <!--查看此手机号有没有使用-->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="isMobileUsed"
+        NetType="get"
+        Url="https://api.bmob.cn/1/users" />
+
+    <!--http://docs.bmob.cn/restful/developdoc/index.html?menukey=develop_doc&key=develop_restful#index_短信服务-->
+    <!--request sms code-->
+
+    <!--成功时响应
+        status: 200 OK
+        body:
+        {
+            "smsId": smsId（可用于后面使用查询短信状态接口来查询该条短信是否发送成功）
+        }
+    -->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="requestSmsCode"
+        NetType="POST"
+        Url="https://api.bmob.cn/1/requestSmsCode" />
+
+    <!--verify sms code-->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="verifySmsCode"
+        NetType="POST"
+        Url="https://api.bmob.cn/1/verifySmsCode" />
+
+    <!--query sms state-->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="querySmsState"
+        NetType="GET"
+        Url="https://api.bmob.cn/1/querySms" />
+</url>
