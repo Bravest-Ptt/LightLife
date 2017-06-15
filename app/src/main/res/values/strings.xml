@@ -9,5 +9,9 @@
     <string name="mine">我的</string>
     <string name="my_message">我的消息</string>
     <string name="click_check">点击查看</string>
+    <string name="check_examination_report">查看体检报告</string>
+    <string name="nearby_examination_center">周边体检商家</string>
+    <string name="nearby_health_foods">周边保健美食</string>
+    <string name="hot_topic">热门信息</string>
 
 </resources>

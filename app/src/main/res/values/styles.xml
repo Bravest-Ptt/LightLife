@@ -18,6 +18,12 @@
         <item name="android:layout_height">0.30000007dp</item>
     </style>
 
+    <style name="line_horizontal_wide">
+        <item name="android:background">@drawable/line_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">16dp</item>
+    </style>
+
     <style name="arrow_right">
         <item name="android:layout_width">8dp</item>
         <item name="android:layout_height">12dp</item>
@@ -65,6 +71,11 @@
 
     <style name="arrow_right_gray" parent="@style/arrow_right">
         <item name="android:src">@mipmap/arrow_right_gray</item>
+    </style>
+
+    <style name="normal_text_style">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
     </style>
 
 </resources>
