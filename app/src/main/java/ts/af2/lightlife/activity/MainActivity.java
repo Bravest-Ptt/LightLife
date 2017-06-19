@@ -8,7 +8,6 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
 
-
 import java.util.ArrayList;
 
 import ts.af2.lightlife.adapter.MyFragmentPagerAdapter;
@@ -63,7 +62,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
         /**ViewPager**/
         viewPager=(ViewPager) findViewById(R.id.view_pager);
-        HomeFragment weChatFragment=new HomeFragment();
+        HomeFragment weChatFragment =new HomeFragment();
         GuideFragment guideFragment =new GuideFragment();
         CommunityFragment communityFragment =new CommunityFragment();
         MineFragment mineFragment =new MineFragment();

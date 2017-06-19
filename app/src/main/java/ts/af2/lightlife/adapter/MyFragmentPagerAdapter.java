@@ -3,6 +3,7 @@ package ts.af2.lightlife.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+        Log.i("hym","Fragment id = "+position+" fragment name = "+list.get(position));
         return list.get(position);
     }
 
@@ -25,4 +27,5 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return list.size();
     }
+
 }

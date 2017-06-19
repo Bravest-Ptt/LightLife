@@ -1,0 +1,1 @@
+utils包里存放的是各种与业务无关的公用方法，比如对SharedPreferences的封装。
