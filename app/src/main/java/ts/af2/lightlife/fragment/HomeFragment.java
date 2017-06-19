@@ -33,7 +33,6 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
@@ -72,5 +71,15 @@ public class HomeFragment extends Fragment {
         cycleViewPager.setTime(2000);
         //设置圆点指示图标组居中显示，默认靠右
         cycleViewPager.setIndicatorCenter();
+    }
+
+    @Override
+    public void onStop() {
+        views.clear();
+        if (null != cycleViewPager) {
+            getChildFragmentManager().beginTransaction().remove(cycleViewPager)
+                    .commitAllowingStateLoss();
+        }
+        super.onStop();
     }
 }

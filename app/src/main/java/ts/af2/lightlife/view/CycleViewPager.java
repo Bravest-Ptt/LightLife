@@ -90,6 +90,11 @@ public class CycleViewPager extends Fragment implements OnPageChangeListener {
         return view;
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
     public void setData(List<ImageView> views, List<ADInfo> list, ImageCycleViewListener listener) {
         setData(views, list, listener, 0);
     }
