@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <url>
-    <!--注册用户-->
-    <Node
-        ContentType="application/json"
-        Expires="0"
-        Key="register"
-        NetType="post"
-        Url="https://api.bmob.cn/1/users" />
-
     <!--获取当前用户信息-->
     <Node
         ContentType="application/json"
@@ -42,6 +34,7 @@
         Url="https://api.bmob.cn/1/requestSmsCode" />
 
     <!--verify sms code-->
+    <!--url ：https://api.bmob.cn/1/verifySmsCode/smsCode(用户收到的6位短信验证码)-->
     <Node
         ContentType="application/json"
         Expires="0"
@@ -56,4 +49,50 @@
         Key="querySmsState"
         NetType="GET"
         Url="https://api.bmob.cn/1/querySms" />
+
+    <!--判断此用户名是否已经被使用-->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="isUserNameUsed"
+        NetType="GET"
+        Url="https://api.bmob.cn/1/users" />
+
+    <!--注册用户-->
+    <!-- https://api.bmob.cn/1/users-->
+    <!--注册用户-->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="register"
+        NetType="POST"
+        Url="https://api.bmob.cn/1/users" />
+
+
+    <!--上传JPG图片-->
+    <Node
+        ContentType="image/jpeg"
+        Expires="0"
+        Key="uploadJPGImage"
+        NetType="POST"
+        Url="https://api.bmob.cn/2/files" />
+
+    <!--更新User信息-->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="updateUserInfo"
+        NetType="PUT"
+        Url="https://api.bmob.cn/1/users" />
+
+    <!--Login https://api.bmob.cn/1/login-->
+    <!--How to use
+        add username=xxxxxx
+    -->
+    <Node
+        ContentType="application/json"
+        Expires="0"
+        Key="login"
+        NetType="GET"
+        Url="https://api.bmob.cn/1/login" />
 </url>

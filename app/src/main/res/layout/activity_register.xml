@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/register_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="10dp"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/margin_dp_32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/register_app_name_padding"
+            android:paddingRight="@dimen/register_app_name_padding">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/phoneNumberContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/login_text_input_hint">
+
+                <EditText
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="@string/login_phonenumber"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/login_text_color"
+                    android:textColorHint="@color/login_text_input_hint" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/verification_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phoneNumberContainer"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/verification"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_weight="3"
+                    android:textColorHint="@color/login_text_input_hint">
+
+                    <EditText
+                        android:id="@+id/verification_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/register_verification_code"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/login_text_color"
+                        android:textColorHint="@color/login_text_input_hint" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/verification_code_send"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/login_selector"
+                    android:text="@string/register_verification_code"
+                    android:textColor="@color/login_button_text_color"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/passWordContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/verification_panel"
+                android:textColorHint="@color/login_text_input_hint"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/selector_password_visibility_toggle">
+
+                <EditText
+                    android:id="@+id/passWord"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="@string/register_password_hint"
+                    android:inputType="textPassword"
+                    android:textColor="@color/login_text_color" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<Button-->
+            <!--android:id="@+id/register"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/login_register_h"-->
+            <!--android:layout_below="@id/passWordContainer"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:background="@drawable/login_selector"-->
+            <!--android:text="@string/register_get_sms_code"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="20sp" />-->
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_register_h"
+                android:layout_below="@id/passWordContainer"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/register_get_sms_code"
+                android:textColor="@color/login_button_text_color"
+                android:background="@drawable/login_selector"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/register_already"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/register"
+                android:layout_marginTop="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/register_already"
+                android:textColor="@color/selector_forget_password" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/register_app_name_padding"
+    android:paddingRight="@dimen/register_app_name_padding">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:visibility="gone"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/margin_dp_32"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/sex_profile_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/login_text_input_hint"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/sex_profile_editor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:textColor="@color/login_text_color"
+                android:textColorHint="@color/login_text_input_hint" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/verify_sex_profile_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sex_profile_panel"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/male_profile_image"
+                android:layout_width="@dimen/verify_profile_width"
+                android:layout_height="@dimen/verify_profile_width"
+                android:layout_gravity="center"
+                android:src="@drawable/male"
+                app:civ_border_color="@color/splash_1000"
+                android:padding="@dimen/margin_dp_4"
+                app:civ_border_width="@dimen/verify_profile_border_width" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/female_profile_image"
+                android:layout_width="@dimen/verify_profile_width"
+                android:layout_height="@dimen/verify_profile_width"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/female"
+                android:padding="@dimen/margin_dp_4"
+                app:civ_border_color="@color/splash_1000"
+                app:civ_border_width="@dimen/verify_profile_border_width" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/verification_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColorHint="@color/login_text_input_hint">
+
+        <EditText
+            android:id="@+id/verification_editor"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/register_verification_code"
+            android:inputType="numberDecimal"
+            android:textColor="@color/login_text_color"
+            android:textColorHint="@color/login_text_input_hint" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/username_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/login_text_input_hint">
+
+        <EditText
+            android:id="@+id/username_editor"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/verify_username"
+            android:textColor="@color/login_text_color" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_register_h"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/register"
+        android:textColor="@color/login_button_text_color"
+        android:background="@drawable/login_selector"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/register_already"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/register_already"
+        android:textColor="@color/selector_forget_password" />
+</LinearLayout>

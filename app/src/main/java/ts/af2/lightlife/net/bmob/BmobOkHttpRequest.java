@@ -1,42 +1,38 @@
-package bravest.ptt.androidlib.net.bmob;
+package ts.af2.lightlife.net.bmob;
 
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
-import org.json.JSONException;
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.Iterator;
-import java.util.List;
 
-import bravest.ptt.androidlib.net.OkHttpRequest;
+import bravest.ptt.androidlib.net.AbstractOkHttpRequest;
 import bravest.ptt.androidlib.net.RequestCallback;
 import bravest.ptt.androidlib.net.RequestParam;
 import bravest.ptt.androidlib.net.URLData;
-import bravest.ptt.androidlib.utils.BaseUtils;
-import bravest.ptt.androidlib.utils.bmob.BmobConstants;
 import bravest.ptt.androidlib.utils.JNIUtils;
-import bravest.ptt.androidlib.utils.PreferencesUtils;
+import bravest.ptt.androidlib.utils.bmob.BmobConstants;
 import bravest.ptt.androidlib.utils.plog.PLog;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import ts.af2.lightlife.entity.User;
+import ts.af2.lightlife.util.API;
 
 /**
  * Created by root on 5/11/17.
  */
 
-public class BmobHttpRequest extends OkHttpRequest {
+public class BmobOkHttpRequest extends AbstractOkHttpRequest {
 
-    private static final String TAG = "BmobHttpRequest";
+    private static final String TAG = "BmobOkHttpRequest";
 
     private Context mContext;
 
-    public BmobHttpRequest(Context context, URLData data, RequestParam param, RequestCallback callBack) {
+    public BmobOkHttpRequest(Context context, URLData data, RequestParam param, RequestCallback callBack) {
         super(context, data, param, callBack);
         this.mContext = context;
     }
@@ -49,24 +45,34 @@ public class BmobHttpRequest extends OkHttpRequest {
      * @param param
      * @return
      */
-    protected String getNewUrl(String url, String method, RequestParam param) {
+    protected String getNewUrl(String url, URLData data, RequestParam param) {
         try {
             if (param == null) {
                 return url;
             }
 
             // 添加参数
-            final StringBuffer paramBuffer = new StringBuffer();
-            paramBuffer.append(url);
+            final StringBuilder builder = new StringBuilder();
+            builder.append(url);
+
+            final String method = data.getNetType().toUpperCase();
 
             if (param.hasId()) {
-                paramBuffer.append("/"+param.getObjectId());
+                builder.append("/").append(param.getObjectId());
             }
 
             if (param.hasBody()) {
                 switch (method) {
                     case REQUEST_GET:
-                        paramBuffer.append("?where="+URLEncoder.encode(param.getBody(), "utf-8"));
+                        //for login
+                        Log.d(TAG, "getNewUrl: data getkey = " +data.getKey());
+                        if (TextUtils.equals(data.getKey(), API.LOGIN)) {
+                            builder.append("?").append(param.getBody());
+                        } else {
+                            //for query
+                            builder.append("?where=")
+                                    .append(URLEncoder.encode(param.getBody(), "utf-8"));
+                        }
                         break;
                     case REQUEST_POST:
                         break;
@@ -79,25 +85,8 @@ public class BmobHttpRequest extends OkHttpRequest {
                 }
             }
 
-            url = paramBuffer.toString();
+            url = builder.toString();
             PLog.log("new url = " + url);
-
-//            if ((param != null) && (param.length() > 0)) {
-//                //sortKeys();// 这里要对key进行排序
-//                Iterator<String> keys = param.keys();
-//                while (keys.hasNext()) {
-//                    String key = keys.next();
-//                    String value = param.get(key).toString();
-//                    if (paramBuffer.length() == 0) {
-//                        paramBuffer.append(key + "=" + URLEncoder.encode(value, "utf-8"));
-//                    } else {
-//                        paramBuffer.append("&" + key + "=" + BaseUtils.UrlEncodeUnicode(value));
-//                    }
-//                }
-//                return url + "?" + paramBuffer.toString();
-//            } else {
-//                return url;
-//            }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
             return url;
@@ -118,16 +107,21 @@ public class BmobHttpRequest extends OkHttpRequest {
                     requestBuilder.header(BmobConstants.X_BMOB_CONTENT_TYPE, data.getContentType());
                 }
 
-                String token = PreferencesUtils.getString(mContext, BmobConstants.BMOB_SESSION_KEY);
-                if (!TextUtils.isEmpty(token)) {
-                    Log.d(TAG, "intercept: token = " + token);
-                    requestBuilder.header(BmobConstants.X_BMOB_SESSION_TOKEN, token);
+                User user = User.getInstance(mContext);
+                if (user != null) {
+                    String token = user.getSessionToken();
+                    if (!TextUtils.isEmpty(token)) {
+                        Log.d(TAG, "intercept: token = " + token);
+                        requestBuilder.header(BmobConstants.X_BMOB_SESSION_TOKEN, token);
+                    }
                 }
 
+                Log.d(TAG, "intercept: method = " + originalRequest.method() + ", body = " + originalRequest.body());
                 requestBuilder.header(BmobConstants.X_BMOB_APP_ID, JNIUtils.getApplicationId())
                         .header(BmobConstants.X_BMOB_REST_API_KEY, JNIUtils.getRestAPIKey())
                         .method(originalRequest.method(), originalRequest.body());
                 Request request = requestBuilder.build();
+                Log.d(TAG, "intercept: JNIUtils.getApplicationId()c = " + JNIUtils.getApplicationId() + ", X_BMOB_REST_API_KEY = " + JNIUtils.getRestAPIKey());
                 return chain.proceed(request);
             }
         };

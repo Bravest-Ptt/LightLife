@@ -9,4 +9,31 @@
     <dimen name="font_normal">16sp</dimen>
     <dimen name="font_smallest">12sp</dimen>
     <dimen name="height_item">48dp</dimen>
+
+
+    <!--login-->
+    <dimen name="login_register_h">54dp</dimen>
+    <dimen name="login_margin_bottom">34dp</dimen>
+    <dimen name="login_margin_side">30dp</dimen>
+    <dimen name="login_button_margin">20dp</dimen>
+
+    <!--register-->
+    <dimen name="register_app_name_padding">30dp</dimen>
+
+    <!--verify profile-->
+    <dimen name="verify_profile_width">108dp</dimen>
+    <dimen name="verify_profile_border_width">2dp</dimen>
+    <dimen name="verify_profile_margin">24dp</dimen>
+
+    <!--toolbar height-->
+    <dimen name="toolbar_confirm_width">50dp</dimen>
+    <dimen name="toolbar_confirm_height">30dp</dimen>
+
+    <dimen name="margin_dp_2">2dp</dimen>
+    <dimen name="margin_dp_4">4dp</dimen>
+    <dimen name="margin_dp_8">8dp</dimen>
+    <dimen name="margin_dp_10">10dp</dimen>
+    <dimen name="margin_dp_16">16dp</dimen>
+    <dimen name="margin_dp_32">32dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

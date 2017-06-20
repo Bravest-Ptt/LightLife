@@ -2,8 +2,8 @@
 #include <jni.h>
 /* Header for class bravest_ptt_androidlib_utils_JNIUtils */
 
-#define APPLICATION_ID "ce21dd4747a54ca096dd4d93f5ef4fac"
-#define REST_API_KEY "8aae60a7dd7112f6a69683e9593991db"
+#define APPLICATION_ID "e97765442849e06baa0db1d88632cbbe"
+#define REST_API_KEY "8d0a9f45df408c1ca02f7b699ae3d032"
 
 #ifndef _Included_bravest_ptt_androidlib_utils_JNIUtils
 #define _Included_bravest_ptt_androidlib_utils_JNIUtils

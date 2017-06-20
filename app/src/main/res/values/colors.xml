@@ -9,4 +9,96 @@
     <color name="gray_dark">#FF333333</color>
     <color name="gray_silvery">#FFCCCCCC</color>
     <color name="gray_title">#e6e6e6</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="cardview_dark_background">#FF424242</color>
+    <color name="cardview_light_background">#FFFFFFFF</color>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
+
+    <color name="colorSearchMainPanelBackground">#00000000</color>
+    <color name="colorSearchMainPanel">#FAFAFA</color>
+    <color name="colorTranslateHint">#66111111</color>
+
+
+    <color name="colorFAB">#FF4081</color>
+    <color name="colorFABPressed">#FF1081</color>
+
+    <color name="MaterialBlue_500">#2196f3</color>
+    <color name="MaterialBlue_600">#1e88e5</color>
+
+    <color name="MaterialBluegray_50_4_item_voice">#eceff1</color>
+    <color name="MaterialYellow_400_4_item_favorite">#ffee58</color>
+    <color name="MaterialBluegray_500_4_item_delete">#f44336</color>
+
+    //indicator
+    <color name="icon_color_icon_font">#8a8a8a</color>
+    <color name="first_icon_color_red">#f44336</color>
+    <color name="fourth_icon_color_purple">#9c27b0</color>
+    <color name="second_icon_color_orange">#ff9800</color>
+    <color name="third_icon_color_blue">#03a9f4</color>
+
+    <color name="nav_item_text_color_default">#263238</color>
+
+    //home
+    <color name="home_red_500_4_toolbar">#f44336</color>
+    <color name="home_red_600_4_status_bar">#e53935</color>
+    <color name="iat_recognize_button_pressed_color">#b71c1c</color>
+
+    <!--<color name="home_red_500_4_toolbar">#212121</color>-->
+    <!--<color name="home_red_600_4_status_bar">#000000</color>-->
+
+    //export
+    <color name="deep_orange_500_4_card_tip_text">#ff5722</color>
+    <color name="export_orange_200_4_card_view">#ffe0b2</color>
+    <color name="export_orange_500_4_toolbar">#ff9800</color>
+    <color name="export_orange_600_4_status_bar">#fb8c00</color>
+    <color name="export_orange_50_4_input">#fff3e0</color>
+
+    //import
+    <color name="import_blue_500_4_toolbar">#2196f3</color>
+    <color name="import_blue_600_4_status_bar">#1e88e5</color>
+
+    //favorite
+    <color name="favorite_purple_500_4_toolbar">#9c27b0</color>
+    <color name="favorite_purple_600_4_status_bar">#8e24aa</color>
+    <color name="favorite_purple_100_4_item_card">#e1bee7</color>
+    <color name="favorite_purple_alpha_100">#77e1bee7</color>
+
+    //splash
+    <color name="splash_900">#212121</color>
+    <color name="splash_1000">#000000</color>
+    <color name="splash_800">#424242</color>
+    <color name="splash_login">#101010</color>
+
+    <color name="white_a_55">#55ffffff</color>
+
+    <!--login-->
+    <color name="login_normal">#11000000</color>
+    <color name="login_pressed">#4481c784</color>
+    <color name="login_disabled">#55ffffff</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="blue">#4674e7</color>
+    <color name="blue_dark">#aa4674e7</color>
+
+
+    <color name="blue_200">#90caf9</color>
+    <color name="blue_300">#64b5f6</color>
+
+    <color name="green_300">#81c784</color>
+    <color name="green_400">#66bb6a</color>
+
+    <color name="red_300">#e57373</color>
+    <color name="red_400">#ef5350</color>
+    <color name="red_500">#f44336</color>
+
+    <color name="login_text_input_hint">@color/green</color>
+    <color name="login_text_color">@color/green_300</color>
+    <color name="login_button_text_color">@color/green</color>
+
+    <color name="main_green_text">@color/green</color>
+    <color name="main_grey_text">#f3f3f3</color>
 </resources>

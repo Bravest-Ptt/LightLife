@@ -2,6 +2,7 @@ package ts.af2.lightlife.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import bravest.ptt.androidlib.activity.AbstractBaseActivity;
 import ts.af2.lightlife.adapter.MyFragmentPagerAdapter;
 import ts.af2.lightlife.fragment.GuideFragment;
 import ts.af2.lightlife.fragment.CommunityFragment;
@@ -18,18 +20,32 @@ import ts.af2.lightlife.fragment.HomeFragment;
 import ts.af2.lightlife.R;
 
 
-public class MainActivity extends FragmentActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity implements View.OnClickListener{
     private TextView tvMessageNormal,tvMessagePress,tvContactsNormal,tvContactsPress;
     private TextView tvDiscoveryNormal,tvDiscoveryPress,tvMeNormal,tvMePress;
     private TextView tvMessageTextNormal,tvMessageTextPress,tvContactsTextNormal,tvContactsTextPress;
     private TextView tvDiscoveryTextNormal,tvDiscoveryTextPress,tvMeTextNormal,tvMeTextPress;
     private ViewPager viewPager;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+    private int mGreenTextColor;
+    private int mGreyTextColor;
+
+    @Override
+    protected void initVariables() {
+        super.initVariables();
+        setHasTransitionAnimation(false);
+        mGreenTextColor = getResources().getColor(R.color.main_green_text);
+        mGreyTextColor = getResources().getColor(R.color.main_grey_text);
+    }
+
+    @Override
+    protected void initViews(@Nullable Bundle savedInstanceState) {
+        setContentView(R.layout.activity_main);
         initView();
+    }
+
+    @Override
+    protected void initData() {
     }
 
     private void initView(){
@@ -88,10 +104,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                         tvMessagePress.getBackground().setAlpha(diaphaneity_two);
                         tvContactsNormal.getBackground().setAlpha(diaphaneity_two);
                         tvContactsPress.getBackground().setAlpha(diaphaneity_one);
-                        tvMessageTextNormal.setTextColor(Color.argb(diaphaneity_one, 153, 153, 153));
-                        tvMessageTextPress.setTextColor(Color.argb(diaphaneity_two, 216, 30, 6));
-                        tvContactsTextNormal.setTextColor(Color.argb(diaphaneity_two,153,153,153));
-                        tvContactsTextPress.setTextColor(Color.argb(diaphaneity_one,216, 30, 6));
+                        tvMessageTextNormal.setTextColor(Color.argb(diaphaneity_one, 153, 153, 153));//f3f3f3
+                        tvMessageTextPress.setTextColor(Color.argb(diaphaneity_two, 216, 30, 6));//green
+                        tvContactsTextNormal.setTextColor(Color.argb(diaphaneity_two,153,153,153));//f3f3f3
+                        tvContactsTextPress.setTextColor(Color.argb(diaphaneity_one,216, 30, 6));//green
                         break;
                     case 1:
                         tvContactsNormal.getBackground().setAlpha(diaphaneity_one);

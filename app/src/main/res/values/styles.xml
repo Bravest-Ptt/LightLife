@@ -33,7 +33,7 @@
     </style>
 
     <style name="arrow_right_dark" parent="@style/arrow_right">
-    <item name="android:src">@mipmap/arrow_right_dark</item>
+        <item name="android:src">@mipmap/arrow_right_dark</item>
     </style>
 
     <style name="order_and_trade_status_container">
@@ -77,5 +77,39 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/gray_dark</item>
     </style>
+
+    <!-- Custom progress dialog -->
+    <style name="NoBorderProgressDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:alertDialogStyle">@style/CustomAlertDialogStyle</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!--<item name="android:backgroundDimEnabled">false</item>-->
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="colorAccent">@color/login_pressed</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CustomAlertDialogStyle">
+        <item name="android:bottomBright">@color/transparent</item>
+        <item name="android:bottomDark">@color/transparent</item>
+        <item name="android:bottomMedium">@color/transparent</item>
+        <item name="android:centerBright">@color/transparent</item>
+        <item name="android:centerDark">@color/transparent</item>
+        <item name="android:centerMedium">@color/transparent</item>
+        <item name="android:fullBright">@color/transparent</item>
+        <item name="android:fullDark">@color/transparent</item>
+        <item name="android:topBright">@color/transparent</item>
+        <item name="android:topDark">@color/transparent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

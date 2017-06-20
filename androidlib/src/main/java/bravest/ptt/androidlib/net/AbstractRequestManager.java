@@ -2,18 +2,15 @@ package bravest.ptt.androidlib.net;
 
 import android.content.Context;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import bravest.ptt.androidlib.net.bmob.BmobHttpRequest;
-
-public class RequestManager {
-    private List<OkHttpRequest> requestList = null;
-    private Context context;
+public abstract class AbstractRequestManager {
+    private List<AbstractOkHttpRequest> requestList = null;
+    protected Context context;
 
 
-    public RequestManager(final Context context) {
+    public AbstractRequestManager(final Context context) {
         this.context = context;
         // 异步请求列表
         requestList = new CopyOnWriteArrayList<>();
@@ -22,7 +19,7 @@ public class RequestManager {
     /**
      * 添加Request到列表
      */
-    public void addRequest(final OkHttpRequest request) {
+    protected void addRequest(final AbstractOkHttpRequest request) {
         requestList.add(request);
     }
 
@@ -31,7 +28,7 @@ public class RequestManager {
      */
     public void cancelRequest() {
         if ((requestList != null) && (requestList.size() > 0)) {
-            for (final OkHttpRequest request : requestList) {
+            for (final AbstractOkHttpRequest request : requestList) {
                 if (request.getCall() != null) {
                     try {
                         request.getCall().cancel();
@@ -49,19 +46,14 @@ public class RequestManager {
     /**
      * 无参数调用
      */
-    public OkHttpRequest createRequest(final URLData urlData, final RequestCallback requestCallback) {
-        final OkHttpRequest request = new BmobHttpRequest(context, urlData, null, requestCallback);
-        addRequest(request);
-        return request;
-    }
+    protected abstract AbstractOkHttpRequest createRequest(final URLData urlData,
+                                                           final RequestCallback requestCallback);
 
     /**
      * 有参数调用
      */
-    public OkHttpRequest createRequest(final URLData urlData, final RequestParam param, final RequestCallback requestCallback) {
-        final OkHttpRequest request = new BmobHttpRequest(context, urlData, param, requestCallback);
-        addRequest(request);
-        return request;
-    }
+    protected abstract AbstractOkHttpRequest createRequest(final URLData urlData,
+                                                           final RequestParam param,
+                                                           final RequestCallback requestCallback);
 
 }

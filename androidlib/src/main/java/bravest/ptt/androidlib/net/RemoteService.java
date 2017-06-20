@@ -1,16 +1,10 @@
 package bravest.ptt.androidlib.net;
 
-import android.app.Activity;
-import android.content.Context;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 
-
-
-import java.util.List;
-
-import bravest.ptt.androidlib.activity.BaseActivity;
+import bravest.ptt.androidlib.activity.AbstractBaseActivity;
 import bravest.ptt.androidlib.mockdata.MockService;
 
 public class RemoteService {
@@ -27,7 +21,7 @@ public class RemoteService {
         return RemoteService.service;
     }
 
-    public void invoke(final BaseActivity activity,
+    public void invoke(final AbstractBaseActivity activity,
                        final String apiKey,
                        final RequestParam param,
                        final RequestCallback callBack) {
@@ -63,11 +57,13 @@ public class RemoteService {
         } else {
             if (param != null) {
                 Log.i("httpParams", "httpParams");
-                  OkHttpRequest request = activity.getRequestManager().createRequest(urlData, param, callBack);
+                  AbstractOkHttpRequest request = activity.
+                          getAbstractRequestManager().createRequest(urlData, param, callBack);
                   DefaultThreadPool.getInstance().execute(request);
             } else {
                 Log.i("http", "http");
-                OkHttpRequest request = activity.getRequestManager().createRequest(urlData,callBack);
+                AbstractOkHttpRequest request = activity.
+                        getAbstractRequestManager().createRequest(urlData,callBack);
                 DefaultThreadPool.getInstance().execute(request);
             }
 
