@@ -8,4 +8,5 @@
     <color name="gray_symbol">#FFE6E6E6</color>
     <color name="gray_dark">#FF333333</color>
     <color name="gray_silvery">#FFCCCCCC</color>
+    <color name="gray_title">#e6e6e6</color>
 </resources>

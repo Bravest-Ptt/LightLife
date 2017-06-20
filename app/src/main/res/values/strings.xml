@@ -13,5 +13,11 @@
     <string name="nearby_examination_center">周边体检商家</string>
     <string name="nearby_health_foods">周边保健美食</string>
     <string name="hot_topic">热门信息</string>
+    <string name="settings_safe">账号安全</string>
+    <string name="settings">设置</string>
+    <string name="settings_message">新消息通知</string>
+    <string name="settings_privacy">隐私</string>
+    <string name="settings_common">通用</string>
+    <string name="settings_about_us">关于我们</string>
 
 </resources>
