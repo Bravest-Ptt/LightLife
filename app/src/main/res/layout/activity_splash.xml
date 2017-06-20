@@ -8,7 +8,10 @@
     android:orientation="vertical"
     android:weightSum="3"
     tools:context=".activity.SplashActivity">
-
+    <TextView
+        android:text="测试\n帐号：test\n密码：8个1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
