@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <Button
+            android:id="@+id/status_dismiss"
+            style="@style/article_comment_button"
+            android:layout_width="50dp"
+            android:layout_alignParentLeft="true"
+            android:text="@string/dismiss"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/publish_status"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/status_publish"
+            style="@style/article_comment_button"
+            android:layout_width="50dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/publish"
+            android:textColor="@android:color/holo_green_dark"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="发表你的状态吧"
+            android:textColorHint="@android:color/darker_gray"/>
+
+        <!-- when click, camera preview comes -->
+        <ImageButton
+            android:id="@+id/status_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/community_camera_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@android:color/darker_gray"/>
+    </LinearLayout>
+
+    <!-- todo -->
+    <!--    <TextView
+            android:id="@+id/mark_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/arrow_right_dark"
+            android:text="mark your location"
+            android:paddingLeft="10dp"/>-->
+
+</LinearLayout>

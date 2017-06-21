@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:lightlife="http://schemas.android.com/apk/res/ts.af2.lightlife"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardUseCompatPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/article_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="2dp">
+
+                <include
+                    android:id="@+id/article_structure_1"
+                    layout="@layout/article_structure_1"
+                    android:visibility="visible"/>
+
+                <include
+                    android:id="@+id/article_structure_2"
+                    layout="@layout/article_structure_2"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="12dp"
+                        android:text="date-11-11"
+                        android:textSize="@dimen/font_smallest"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="source"
+                        android:textSize="@dimen/font_smallest"/>
+
+                </RelativeLayout>
+
+                <!-- todo: pop view to show if user is interested or just wants to delete it or comment it-->
+                <RelativeLayout
+                    android:id="@+id/edit_buttons"
+                    android:layout_width="100dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp">
+
+                    <Button
+                        style="@style/article_comment_button"
+                        android:layout_alignParentLeft="true"
+                        android:text="comment"/>
+
+                    <Button
+                        style="@style/article_comment_button"
+                        android:layout_centerInParent="true"
+                        android:text="good"/>
+
+                    <Button
+                        style="@style/article_comment_button"
+                        android:layout_alignParentRight="true"
+                        android:text="delete"/>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
