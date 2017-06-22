@@ -28,8 +28,7 @@
             style="@style/article_comment_button"
             android:layout_width="50dp"
             android:layout_alignParentRight="true"
-            android:text="@string/publish"
-            android:textColor="@android:color/holo_green_dark"/>
+            android:text="@string/publish"/>
 
     </RelativeLayout>
 
@@ -56,7 +55,7 @@
             android:id="@+id/status_picture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/community_camera_btn"/>
+            android:background="@mipmap/community_camera_btn"/>
 
         <TextView
             android:layout_width="match_parent"

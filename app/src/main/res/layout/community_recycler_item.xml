@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:lightlife="http://schemas.android.com/apk/res/ts.af2.lightlife"
+    xmlns:lightlife="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -15,8 +14,8 @@
         android:foreground="?attr/selectableItemBackground"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        card_view:cardCornerRadius="2dp"
-        card_view:cardUseCompatPadding="false">
+        lightlife:cardCornerRadius="2dp"
+        lightlife:cardUseCompatPadding="false">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,7 +55,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:paddingLeft="12dp"
+                        android:layout_marginLeft="8dp"
                         android:text="date-11-11"
                         android:textSize="@dimen/font_smallest"/>
 
@@ -72,25 +71,29 @@
                 <!-- todo: pop view to show if user is interested or just wants to delete it or comment it-->
                 <RelativeLayout
                     android:id="@+id/edit_buttons"
-                    android:layout_width="100dp"
+                    android:layout_width="80dp"
                     android:layout_height="12dp"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginRight="8dp">
 
-                    <Button
+                    <ImageButton
                         style="@style/article_comment_button"
+                        android:layout_width="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:text="comment"/>
+                        android:background="@mipmap/comment_light"/>
 
-                    <Button
+                    <ImageButton
                         style="@style/article_comment_button"
+                        android:layout_width="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="good"/>
+                        android:background="@mipmap/appreciate_light"/>
 
-                    <Button
+                    <ImageButton
                         style="@style/article_comment_button"
+                        android:layout_width="wrap_content"
+                        android:background="@mipmap/delete_light"
                         android:layout_alignParentRight="true"
-                        android:text="delete"/>
+                        android:layout_alignParentEnd="true"/>
 
                 </RelativeLayout>
             </RelativeLayout>
