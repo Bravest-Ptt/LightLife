@@ -40,7 +40,7 @@
                     android:paddingBottom="10dp">
 
                     <ts.af2.lightlife.view.CircleImage
-                        android:id="@+id/ci_userface"
+                        android:id="@+id/user_profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
@@ -50,37 +50,16 @@
                         lightlife:src="@mipmap/no_userface" />
 
                     <TextView
-                        android:id="@+id/tv_name"
+                        android:id="@+id/user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_toRightOf="@id/ci_userface"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_toRightOf="@id/user_profile"
                         android:gravity="center_vertical"
                         android:text="姓名"
                         android:textColor="@color/gray_dark"
                         android:textSize="@dimen/font_large" />
-
-                    <ImageView
-                        android:id="@+id/iv_level"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@id/tv_name"
-                        android:layout_marginTop="5dp"
-                        android:layout_toRightOf="@id/tv_name" />
-
-                    <TextView
-                        android:id="@+id/tv_credit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_name"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="18dp"
-                        android:layout_toRightOf="@id/ci_userface"
-                        android:gravity="center_vertical"
-                        android:text="ID"
-                        android:textColor="@color/gray_dark"
-                        android:textSize="@dimen/font_small" />
 
                 </RelativeLayout>
 
