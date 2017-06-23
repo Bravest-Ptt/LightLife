@@ -8,11 +8,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import ts.af2.lightlife.R;
 import ts.af2.lightlife.activity.SettingsActivity;
+import ts.af2.lightlife.activity.SplashActivity;
 import ts.af2.lightlife.entity.User;
 import ts.af2.lightlife.util.UserUtils;
 import ts.af2.lightlife.view.CircleImage;
@@ -36,8 +38,9 @@ public class MineFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.settings:
-                    Intent intent = new Intent(getActivity(), SettingsActivity.class);
-                    startActivity(intent);
+                    Intent settingsIntent = new Intent(getActivity(), SettingsActivity.class);
+                    startActivity(settingsIntent);
+                    break;
             }
         }
     };

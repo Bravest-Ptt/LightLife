@@ -77,4 +77,6 @@
     <string name="publish_status">写状态</string>
     <string name="status">状态</string>
 
+    <string name="sign_out">退出登录</string>
+
 </resources>
