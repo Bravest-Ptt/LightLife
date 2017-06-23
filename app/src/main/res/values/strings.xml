@@ -67,4 +67,14 @@
     <string name="confirm">确认</string>
     <string name="title_activity_splash">SplashActivity</string>
 
+    <string name="title_activity_publish_status">发表状态</string>
+    <string name="load_more">加载更多</string>
+    <string name="all_user_status">所有用户的状态</string>
+    <string name="user_info">用户信息</string>
+    <string name="article_details">文章信息</string>
+    <string name="dismiss">取消</string>
+    <string name="publish">发布</string>
+    <string name="publish_status">写状态</string>
+    <string name="status">状态</string>
+
 </resources>

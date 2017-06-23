@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ts.af2.lightlife">
+          package="ts.af2.lightlife">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".App"
@@ -42,7 +45,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.PublishStatusActivity"
+            android:label="@string/title_activity_publish_status"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".activity.AllStatusActivity"
+            android:label="@string/all_user_status">
+        </activity>
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:label="@string/user_info">
+        </activity>
+        <activity
+            android:name=".activity.ArticleDetailsActivity"
+            android:label="@string/article_details">
+        </activity>
     </application>
-
 
 </manifest>
