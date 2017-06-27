@@ -28,6 +28,7 @@
             style="@style/article_comment_button"
             android:layout_width="50dp"
             android:layout_alignParentRight="true"
+            android:enabled="false"
             android:text="@string/publish"/>
 
     </RelativeLayout>
@@ -43,24 +44,38 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/status_text"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="@null"
             android:gravity="top"
-            android:hint="发表你的状态吧"
+            android:hint="@string/publish_status_hint"
             android:textColorHint="@android:color/darker_gray"/>
 
-        <!-- when click, camera preview comes -->
-        <ImageButton
-            android:id="@+id/status_picture"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@mipmap/community_camera_btn"/>
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/status_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/community_camera_btn"/>
+
+            <LinearLayout
+                android:id="@+id/picked_pictures"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@android:color/darker_gray"/>
+
     </LinearLayout>
 
     <!-- todo -->

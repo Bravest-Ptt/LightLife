@@ -76,6 +76,9 @@
     <string name="publish">发布</string>
     <string name="publish_status">写状态</string>
     <string name="status">状态</string>
+    <string name="publish_status_hint">你想说点什么</string>
+    <string name="take_photo">拍照</string>
+    <string name="from_album">从相册</string>
 
     <string name="sign_out">退出登录</string>
     <string name="safe_tele_number">手机号</string>

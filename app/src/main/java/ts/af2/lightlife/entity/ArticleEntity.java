@@ -1,4 +1,4 @@
-package ts.af2.lightlife.bean;
+package ts.af2.lightlife.entity;
 
 import java.io.Serializable;
 import java.util.List;
