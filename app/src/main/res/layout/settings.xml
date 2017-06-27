@@ -165,7 +165,7 @@
                         android:id="@+id/sign_out"
                         android:layout_width="fill_parent"
                         android:layout_height="50.0dip"
-                        android:background="@color/red"
+                        android:background="@drawable/log_out_selector"
                         android:padding="10.0dip"
                         android:text="@string/sign_out"
                         android:textColor="@color/white" />

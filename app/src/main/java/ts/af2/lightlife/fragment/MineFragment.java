@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import ts.af2.lightlife.R;
 import ts.af2.lightlife.activity.SettingsActivity;
@@ -28,6 +29,8 @@ public class MineFragment extends Fragment {
     private View mHost;
     private CircleImage mUserProfile;
     private RelativeLayout mSettingsLayout;
+    private TextView mUserName;
+    private static String TAG = "MineFragment";
 
     public MineFragment() {
         // Required empty public constructor
@@ -58,7 +61,8 @@ public class MineFragment extends Fragment {
 
     private void initData() {
         User user = User.getInstance(getActivity());
-        Log.d("fengyou", "url = " + user.toString());
+        Log.d(TAG, "url = " + user.toString());
+        mUserName.setText(user.getUsername());
     }
 
     private void setClickListener() {
@@ -68,6 +72,7 @@ public class MineFragment extends Fragment {
     private void initView() {
         mSettingsLayout = (RelativeLayout) mHost.findViewById(R.id.settings);
         mUserProfile = (CircleImage) mHost.findViewById(R.id.user_profile);
+        mUserName = (TextView) mHost.findViewById(R.id.user_name);
     }
 
 }

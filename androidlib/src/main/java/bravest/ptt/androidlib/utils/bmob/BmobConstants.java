@@ -12,7 +12,7 @@ public interface BmobConstants {
 	String X_BMOB_SESSION_TOKEN = "X-Bmob-Session-Token";
 
 	//session token shared preference key
-	String PREF_USER = "efastquery_user";
+	String PREF_USER = "lightlife_user";
 
 	String PREF_KEY_USER = "user_object";
 

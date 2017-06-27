@@ -9,7 +9,7 @@ import java.util.Date;
 import ts.af2.lightlife.util.UserUtils;
 
 
-public class User implements Serializable{
+public class User implements Serializable {
 
     private static final long serialVersionUID = -2083503801443301445L;
 
@@ -80,7 +80,8 @@ public class User implements Serializable{
     }
 
     /**
-     *  read User from memory or local shared preference
+     * read User from memory or local shared preference
+     *
      * @param context
      * @return
      */
@@ -90,6 +91,13 @@ public class User implements Serializable{
             sUser = (User) UserUtils.readObject(context);
         }
         return sUser;
+    }
+
+    public static void clearUser(Context context) {
+        Log.d(TAG, "clearUser: user = " + sUser);
+        if (sUser != null) {
+            sUser = null;
+        }
     }
 
     public static void saveUserLocal(Context context, User user) {

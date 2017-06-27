@@ -2,6 +2,7 @@ package ts.af2.lightlife.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -10,22 +11,22 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import bravest.ptt.androidlib.activity.toolbar.AbstractToolbarActivity;
+import bravest.ptt.androidlib.utils.bmob.BmobConstants;
 import ts.af2.lightlife.R;
+import ts.af2.lightlife.entity.User;
 
 /**
  * Created by fengyou on 17-6-20.
  */
 
 public class SettingsActivity extends AbstractToolbarActivity {
-
+    private final static String FILENAME = BmobConstants.PREF_USER;
     private Button mSignOutButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-
     }
 
     @Override
@@ -67,6 +68,11 @@ public class SettingsActivity extends AbstractToolbarActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.sign_out:
+                    SharedPreferences sharedata = getSharedPreferences(FILENAME, 0);
+                    SharedPreferences.Editor editor = sharedata.edit();
+                    editor.clear();
+                    editor.commit();
+                    User.clearUser(mContext);
                     Intent splashIntent = new Intent(SettingsActivity.this, SplashActivity.class);
                     startActivity(splashIntent);
                     break;
