@@ -26,7 +26,7 @@ import ts.af2.lightlife.view.LoadMoreView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CommunityFragment extends Fragment implements View.OnClickListener {
+public class CommunityFragment extends Fragment {
     private static final String TAG = "CommunityFragment";
     private LoadMoreView mLoadMoreView;
     private int mCount = 1;
@@ -68,13 +68,13 @@ public class CommunityFragment extends Fragment implements View.OnClickListener 
         mLoadMoreView.setEmptyView(LayoutInflater.from(getContext()).inflate(R.layout.empty_view, null));
 
         mCommentButton = (Button) view.findViewById(R.id.comment_btn);
-        mCommentButton.setOnClickListener(this);
+        mCommentButton.setOnClickListener(mClickListener);
 
         mAuthorStatus = (TextView) view.findViewById(R.id.author_status);
-        mAuthorStatus.setOnClickListener(this);
+        mAuthorStatus.setOnClickListener(mClickListener);
 
         mAuthorInfo = (LinearLayout) view.findViewById(R.id.author_info);
-        mAuthorInfo.setOnClickListener(this);
+        mAuthorInfo.setOnClickListener(mClickListener);
 
     }
 
@@ -106,28 +106,26 @@ public class CommunityFragment extends Fragment implements View.OnClickListener 
         return dataList;
     }
 
-    @Override
-    public void onClick(View view) {
-        Intent intent = new Intent();
-        switch (view.getId()) {
-            case R.id.comment_btn:
-                if (false) {
-                    // TODO: 17-6-5 如果用户没有登录，则跳转至登录/注册界面
-                } else {
+    View.OnClickListener mClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent();
+            switch (view.getId()) {
+                case R.id.comment_btn:
                     intent.setClass(getActivity(), PublishStatusActivity.class);
-                }
-                break;
-            case R.id.author_status:
-                intent.setClass(getActivity(), AllStatusActivity.class);
-                break;
-            case R.id.author_info:
-                intent.setClass(getActivity(), UserInfoActivity.class);
-                break;
-            default:
+                    break;
+                case R.id.author_status:
+                    intent.setClass(getActivity(), AllStatusActivity.class);
+                    break;
+                case R.id.author_info:
+                    intent.setClass(getActivity(), UserInfoActivity.class);
+                    break;
+                default:
 
+            }
+            startActivity(intent);
         }
-        startActivity(intent);
-    }
+    };
 
     class LoadMoreListener implements LoadMoreView.LoadMoreListener {
         @Override
