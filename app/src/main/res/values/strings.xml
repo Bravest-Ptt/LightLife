@@ -78,5 +78,6 @@
     <string name="status">状态</string>
 
     <string name="sign_out">退出登录</string>
+    <string name="safe_tele_number">手机号</string>
 
 </resources>
